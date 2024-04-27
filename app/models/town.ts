@@ -2,6 +2,7 @@ import { BaseModel, belongsTo, column, hasMany, hasManyThrough } from '@adonisjs
 import type { BelongsTo, HasMany, HasManyThrough } from '@adonisjs/lucid/types/relations'
 import District from './district.js'
 import Neighborhood from './neighborhood.js'
+import Department from './department.js'
 
 export default class Town extends BaseModel {
   @column({ isPrimary: true })
@@ -13,8 +14,11 @@ export default class Town extends BaseModel {
   @column()
   declare departmentId: number
 
-  @belongsTo(() => District)
-  declare department: BelongsTo<typeof District>
+  @belongsTo(() => Department)
+  declare department: BelongsTo<typeof Department>
+
+  @hasMany(() => District)
+  declare districts: HasMany<typeof District>
 
   @hasManyThrough([() => Neighborhood, () => District])
   declare neighborhoods: HasManyThrough<typeof Neighborhood>
