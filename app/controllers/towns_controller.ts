@@ -3,9 +3,9 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 export default class TownsController {
   async index({ response }: HttpContext) {
-    const departments = await Town.all()
+    const towns = await Town.all()
     return response.status(200).json({
-      departments,
+      towns,
     })
   }
 
