@@ -10,6 +10,7 @@
 const DepartmentsController = () => import('#controllers/departments_controller')
 const TownsController = () => import('#controllers/towns_controller')
 const DistrictsController = () => import('#controllers/districts_controller')
+const NeighborhoodsController = () => import('#controllers/neighborhoods_controller')
 import router from '@adonisjs/core/services/router'
 
 router
@@ -26,5 +27,6 @@ router
     router.get('districts', [DistrictsController, 'index'])
     router.get('districts/:name/neighborhoods', [DistrictsController, 'findNeighborhoods'])
 
+    router.get('neighborhoods', [NeighborhoodsController, 'index'])
   })
   .prefix('api')
