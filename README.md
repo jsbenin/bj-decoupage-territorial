@@ -12,7 +12,6 @@ La présente version est une migration de l'ancienne [version](https://github.co
 * [Node.js](https://nodejs.org/en/) ( [AdonisJS](https://adonisjs.com/) 😏 ) pour l'API
 * [MySQL](https://www.mysql.com/) pour stocker les données
 * [Aglio](https://github.com/danielgtaylor/aglio) & [API Blueprint](https://apiblueprint.org/) pour la doc de l'API
-* [Heroku](https://www.heroku.com/) pour le déploiement continu.
 
 # Tu as envie de donner un coup de pouce?
 > Bah il y a beaucoup à faire 😁
