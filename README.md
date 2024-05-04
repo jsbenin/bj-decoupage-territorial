@@ -10,16 +10,16 @@ La présente version est une migration de l'ancienne [version](https://github.co
 
 # Stack Technique
 * [Node.js](https://nodejs.org/en/) ( [AdonisJS](https://adonisjs.com/) 😏 ) pour l'API
-* [MySQL](https://www.mysql.com/) pour stocker les données
+* [SQLite](https://www.mysql.com/) pour stocker les données
 * [Aglio](https://github.com/danielgtaylor/aglio) & [API Blueprint](https://apiblueprint.org/) pour la doc de l'API
 
 # Tu as envie de donner un coup de pouce?
 > Bah il y a beaucoup à faire 😁
-* Ecrire les tests ( C'est con, mais c'est utile 😛 )
-* Améliorer la doc 📚 
-* Rajouter des nouvelles infos, donc écrire du code 🏄
-* Mettre un petit star ⭐️ à ce dépôt.
-* N'oublie pas de me suivre sur [Twitter](https://twitter.com/jgantindev) 👊!
+* [ ] Ecrire les tests ( C'est con, mais c'est utile 😛 )
+* [ ] Améliorer la doc 📚 
+* [ ] Rajouter des nouvelles infos, donc écrire du code 🏄
+* [ ] Mettre un petit star ⭐️ à ce dépôt.
+* [ ] N'oublie pas de nous suivre sur [Twitter](https://twitter.com/jsbenincommunity) 👊!
 
 ### Installation
 ```bash 
@@ -36,7 +36,7 @@ node ace generate:key
 
 ```bash
 # Create sqlite db
-touch databse/db.sqlite
+touch tmp/db.sqlite3
 ```
 
 
