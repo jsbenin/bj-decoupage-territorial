@@ -2,7 +2,7 @@
 
 [API](https://bj-decoupage-territorial.herokuapp.com/) (non officielle) pour obtenir des informations de base sur les départements, communes, arrondissements et les quartiers du Bénin. Elle s'inspire du fichier du découpage territorial du Bénin proposé par [leplutonien](https://github.com/leplutonien/decoupage_territorial_benin).
 
-Cet projet est une migration de l'ancienne [version](https://github.com/nioperas06/bj-decoupage-territorial) qui utilisait une version obsolète d'AdonisJS 5 vers une version plus récente (^6.2.2).
+Ce projet est une migration de l'ancienne [version](https://github.com/nioperas06/bj-decoupage-territorial) qui utilisait une version obsolète d'AdonisJS 5 vers une version plus récente (^6.2.2).
 
 [![bj-decoupage-territorial](preview.png)](https://github.com/jsbenin/bj-decoupage-territorial)
 
@@ -36,6 +36,11 @@ node ace generate:key
 ```bash
 # Create sqlite db
 touch tmp/db.sqlite3
+```
+
+```bash
+# start the project
+pnpm run dev
 ```
 
 
