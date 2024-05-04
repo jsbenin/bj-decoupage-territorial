@@ -18,7 +18,7 @@ Ce projet est une migration de l'ancienne [version](https://github.com/nioperas0
 * [ ] Améliorer la doc 📚 
 * [ ] Rajouter des nouvelles infos, donc écrire du code 🏄
 * [ ] Mettre un petit star ⭐️ à ce dépôt.
-* [ ] N'oublie pas de nous suivre sur [Twitter](https://twitter.com/jsbenincommunity) 👊!
+* N'oublie pas de nous suivre sur [Twitter](https://twitter.com/jsbenincommunity) 👊!
 
 ### Installation
 ```bash 
