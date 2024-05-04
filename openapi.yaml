@@ -1,0 +1,221 @@
+openapi: 3.1.0
+info:
+  title: BJ Découpage territorial
+  description: API (non officielle) pour obtenir des informations de base sur les départements, communes, arrondissements et les quartiers du Bénin.
+  version: 0.0.1
+
+tags:
+  - name: departments
+  - description: Information liées à la liste des departments
+
+paths:
+  /departments:
+    get:
+      tags:
+        - departments
+      summary: Informations liées aux départements
+      description: Récupérer tous les départements
+      responses:
+        "200":
+          $ref: '#/components/responses/Department'
+  /departments/{name}/towns:
+    get:
+      tags:
+        - departments
+      summary: Récupérer toutes les communes d'un département
+      description: Récupérer toutes les communes d'un département
+      responses:
+        "200":
+          $ref: '#/components/responses/DepartmentTowns'
+
+  /departments/{name}/districts:
+    get:
+      tags:
+        - departments
+      summary: Récupérer tous les arrondissements d'un département
+      description: Récupérer tous les arrondissements d'un département
+      responses:
+        "200":
+          $ref: '#/components/responses/DepartmentDistricts'
+  /departments/{name}/neighborhoods:
+    get:
+      tags:
+        - departments
+      summary: Récupérer tous les quartiers d'un département
+      description: Récupérer tous les quartiers d'un département
+      responses:
+        "200":
+          $ref: '#/components/responses/DepartmentNeighborHoods'
+
+    # Towns
+  /towns:
+    get:
+      tags:
+        - towns
+      summary: Informations liées aux communes
+      description: Récupérer toutes les commuunes
+      responses:
+        "200":
+          $ref: '#/components/responses/Towns'
+  /towns/{name}/districts:
+    get:
+      tags:
+        - towns
+      summary: Récupérer tous les arrondissements d'une commmune
+      description: Récupérer tous les arrondissements d'une commune
+      responses:
+        "200":
+          $ref: '#/components/responses/TownDisticts'
+  /towns/{name}/neighborhoods:
+    get:
+      tags:
+        - towns
+      summary: Récupérer tous les quartiers d'une commmune
+      description: Récupérer tous les quartiers d'une commune
+      responses:
+        "200":
+          $ref: '#/components/responses/TownNeighborhoods'
+
+# Neighborhoods
+  /neighborhoods:
+    get:
+      tags:
+        - towns
+      summary: Informations liées aux quartiers
+      description: Récupérer tous les quartiers
+      responses:
+        "200":
+          $ref: '#/components/responses/Neighborhoods'
+
+
+
+components:
+  schemas:
+    Department:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Town:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Districts:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Neighborhoods:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+
+
+
+  responses:
+    Department:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              departments:
+                $ref: '#/components/schemas/Department'
+    DepartmentTowns:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              department:
+                type: string
+              towns:
+                type: array
+                items:
+                  $ref: '#components/schemas/Town'
+    DepartmentDistricts:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              department:
+                type: string
+              districts:
+                type: array
+                items:
+                  $ref: '#components/schemas/Districts'
+    DepartmentNeighborHoods:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              department:
+                type: string
+              neighborhoods:
+                type: array
+                items:
+                  $ref: '#components/schemas/DepartmentNeighborHoods'
+    Town:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              towns:
+                $ref: '#/components/schemas/Town'
+    TownDisticts:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              town:
+                type: string
+              districts:
+                type: array
+                items:
+                  $ref: '#components/schemas/Districts'
+
+    TownNeighborhoods:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              town:
+                type: string
+              neighborhoods:
+                type: array
+                items:
+                  $ref: '#components/schemas/Neighborhoods'
+
+# Neighborhoods
+    Neighborhoods:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            properties:
+              neighborhoods:
+                $ref: '#components/schemas/Neighborhoods'
+
+
