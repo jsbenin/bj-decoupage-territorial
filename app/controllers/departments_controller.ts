@@ -1,7 +1,5 @@
 import Department from '#models/department'
-import District from '#models/district'
 import Neighborhood from '#models/neighborhood'
-import Town from '#models/town'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class DepartmentsController {

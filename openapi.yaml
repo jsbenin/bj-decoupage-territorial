@@ -4,10 +4,6 @@ info:
   description: API (non officielle) pour obtenir des informations de base sur les départements, communes, arrondissements et les quartiers du Bénin.
   version: 0.0.1
 
-tags:
-  - name: departments
-  - description: Information liées à la liste des departments
-
 paths:
   /departments:
     get:
@@ -80,7 +76,7 @@ paths:
   /neighborhoods:
     get:
       tags:
-        - towns
+        - neighborhoods
       summary: Informations liées aux quartiers
       description: Récupérer tous les quartiers
       responses:

@@ -1,5 +1,4 @@
 import { BaseModel, belongsTo, column, hasMany } from '@adonisjs/lucid/orm'
-import Department from './department.js'
 import type { BelongsTo, HasMany } from '@adonisjs/lucid/types/relations'
 import Town from './town.js'
 import Neighborhood from './neighborhood.js'
