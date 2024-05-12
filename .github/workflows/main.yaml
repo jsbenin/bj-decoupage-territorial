@@ -11,6 +11,14 @@ on:
 permissions:
   contents: read
 
+env:
+  TZ: UTC
+  PORT: 3333
+  HOST: localhost
+  LOG_LEVEL: info
+  APP_KEY: IcoF3UXzHDXjAyACjdl8TqAJRBFgB6K_
+  NODE_ENV: test
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
