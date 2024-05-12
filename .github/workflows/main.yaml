@@ -11,6 +11,9 @@ on:
 permissions:
   contents: read
 
+env:
+  NODE_ENV: test
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
