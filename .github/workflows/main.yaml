@@ -50,6 +50,7 @@ jobs:
               cd ~/apps/bj-decoupage-territorial
               node ace build
               cp .env build/
+              cp -r tmp build/
               cd build
               pnpm i --prod
 
