@@ -16,12 +16,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@0609f0983b7a228f052f81ef4c3d6510cae254ad
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0609f0983b7a228f052f81ef4c3d6510cae254ad
         with:
           version: 8.15.5
+
       - name: Set up Node.js
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '21.6.1'
           cache: 'pnpm'
@@ -30,12 +34,6 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm test
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: node-app
-          path: .
 
       - name: Deploy
         uses: appleboy/ssh-action@master
