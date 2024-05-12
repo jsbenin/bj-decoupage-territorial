@@ -1,0 +1,57 @@
+name: Deployment
+
+concurrency: production
+
+on:
+  pull_request:
+    branches: [ $default-branch ]
+  push:
+    branches: [ $default-branch ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@0609f0983b7a228f052f81ef4c3d6510cae254ad
+        with:
+          version: 8.15.5
+      - name: Set up Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '21.6.1'
+          cache: 'pnpm'
+
+      - name: pnpm install, build, and test
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm test
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-app
+          path: .
+
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+            host: ${{ secrets.HOST }}
+            port: ${{ secrets.PORT }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.KEY }}
+            script: |
+              cd ~/apps/bj-decoupage-territorial
+              node ace build
+              cp .env build/
+              cd build
+              pnpm i --prod
+
+
+
+

@@ -34,7 +34,7 @@ node ace generate:key
 
 ```bash
 # Create sqlite db
-touch tmp/db.sqlite3
+mkdir tmp && touch tmp/db.sqlite3
 ```
 
 ```bash
