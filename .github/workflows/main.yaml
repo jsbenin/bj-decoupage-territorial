@@ -30,10 +30,14 @@ jobs:
           node-version: '21.6.1'
           cache: 'pnpm'
 
-      - name: pnpm install, build, and test
-      - run: pnpm install
-      - run: pnpm build
-      - run: pnpm test
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Test
+        run: pnpm test
 
       - name: Deploy
         uses: appleboy/ssh-action@master
