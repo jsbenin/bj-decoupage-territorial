@@ -56,12 +56,12 @@ jobs:
             key: ${{ secrets.KEY }}
             script: |
               cd ~/apps/bj-decoupage-territorial
+              git pull
               node ace build
               cp .env build/
               cp -r tmp build/
               cd build
               pnpm i --prod
-              pm2 restart bj-decoupage-territorial
 
 
 
