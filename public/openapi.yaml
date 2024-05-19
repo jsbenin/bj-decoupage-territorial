@@ -71,6 +71,24 @@ paths:
       responses:
         "200":
           $ref: '#/components/responses/TownNeighborhoods'
+  /districts:
+    get:
+      tags:
+        - districts
+      summary: Informations liées aux communes
+      description: Récupérer toutes les commuunes
+      responses:
+        "200":
+          $ref: '#/components/responses/District'
+  /districts/{name}/neighborhoods:
+    get:
+      tags:
+        - districts
+      summary: Récupérer tous les quartiers d'une commmune
+      description: Récupérer tous les quartiers d'une commune
+      responses:
+        "200":
+          $ref: '#/components/responses/DistrictNeighborhoods'
 
 # Neighborhoods
   /neighborhoods:
@@ -91,28 +109,28 @@ components:
       type: object
       properties:
         id:
-          type: string
+          type: number
         name:
           type: string
     Town:
       type: object
       properties:
         id:
-          type: string
+          type: number
         name:
           type: string
     Districts:
       type: object
       properties:
         id:
-          type: string
+          type: number
         name:
           type: string
     Neighborhoods:
       type: object
       properties:
         id:
-          type: string
+          type: number
         name:
           type: string
 
@@ -198,6 +216,30 @@ components:
             type: object
             properties:
               town:
+                type: string
+              neighborhoods:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Neighborhoods'
+# District
+
+    District:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              district:
+                $ref: '#/components/schemas/Districts'
+    DistrictNeighborhoods:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              district:
                 type: string
               neighborhoods:
                 type: array
