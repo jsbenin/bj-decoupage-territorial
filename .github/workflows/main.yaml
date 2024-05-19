@@ -61,6 +61,7 @@ jobs:
               cp -r tmp build/
               cd build
               pnpm i --prod
+              pm2 restart bj-decoupage-territorial
 
 
 
