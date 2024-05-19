@@ -7,11 +7,16 @@
 |
 */
 
+import { HttpContext } from '@adonisjs/core/http'
+
 const DepartmentsController = () => import('#controllers/departments_controller')
 const TownsController = () => import('#controllers/towns_controller')
 const DistrictsController = () => import('#controllers/districts_controller')
 const NeighborhoodsController = () => import('#controllers/neighborhoods_controller')
 import router from '@adonisjs/core/services/router'
+
+router.get('docs', ({ view }: HttpContext) => view.render('docs'))
+router.on('/').render('docs')
 
 router
   .group(() => {
