@@ -52,7 +52,7 @@ paths:
       description: Récupérer toutes les commuunes
       responses:
         "200":
-          $ref: '#/components/responses/Towns'
+          $ref: '#/components/responses/Town'
   /towns/{name}/districts:
     get:
       tags:
@@ -140,7 +140,7 @@ components:
               towns:
                 type: array
                 items:
-                  $ref: '#components/schemas/Town'
+                  $ref: '#/components/schemas/Town'
     DepartmentDistricts:
       description: Ok
       content:
@@ -153,7 +153,7 @@ components:
               districts:
                 type: array
                 items:
-                  $ref: '#components/schemas/Districts'
+                  $ref: '#/components/schemas/Districts'
     DepartmentNeighborHoods:
       description: Ok
       content:
@@ -166,7 +166,7 @@ components:
               neighborhoods:
                 type: array
                 items:
-                  $ref: '#components/schemas/DepartmentNeighborHoods'
+                  $ref: '#/components/schemas/Neighborhoods'
     Town:
       description: Ok
       content:
@@ -188,7 +188,7 @@ components:
               districts:
                 type: array
                 items:
-                  $ref: '#components/schemas/Districts'
+                  $ref: '#/components/schemas/Districts'
 
     TownNeighborhoods:
       description: Ok
@@ -202,7 +202,7 @@ components:
               neighborhoods:
                 type: array
                 items:
-                  $ref: '#components/schemas/Neighborhoods'
+                  $ref: '#/components/schemas/Neighborhoods'
 
 # Neighborhoods
     Neighborhoods:
@@ -212,6 +212,6 @@ components:
           schema:
             properties:
               neighborhoods:
-                $ref: '#components/schemas/Neighborhoods'
+                $ref: '#/components/schemas/Neighborhoods'
 
 
