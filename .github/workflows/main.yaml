@@ -57,6 +57,7 @@ jobs:
             script: |
               cd ~/apps/bj-decoupage-territorial
               git pull
+              pnpm install
               node ace build
               cp .env build/
               cp -r tmp build/
