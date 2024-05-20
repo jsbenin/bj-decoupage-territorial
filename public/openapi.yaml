@@ -5,7 +5,7 @@ info:
   version: 0.0.1
 
 paths:
-  /departments:
+  /api/departments:
     get:
       tags:
         - departments
@@ -14,7 +14,7 @@ paths:
       responses:
         "200":
           $ref: '#/components/responses/Department'
-  /departments/{name}/towns:
+  /api/departments/{name}/towns:
     get:
       tags:
         - departments
@@ -24,7 +24,7 @@ paths:
         "200":
           $ref: '#/components/responses/DepartmentTowns'
 
-  /departments/{name}/districts:
+  /api/departments/{name}/districts:
     get:
       tags:
         - departments
@@ -33,7 +33,7 @@ paths:
       responses:
         "200":
           $ref: '#/components/responses/DepartmentDistricts'
-  /departments/{name}/neighborhoods:
+  /api/departments/{name}/neighborhoods:
     get:
       tags:
         - departments
@@ -44,7 +44,7 @@ paths:
           $ref: '#/components/responses/DepartmentNeighborHoods'
 
     # Towns
-  /towns:
+  /api/towns:
     get:
       tags:
         - towns
@@ -53,7 +53,7 @@ paths:
       responses:
         "200":
           $ref: '#/components/responses/Town'
-  /towns/{name}/districts:
+  /api/towns/{name}/districts:
     get:
       tags:
         - towns
@@ -62,7 +62,7 @@ paths:
       responses:
         "200":
           $ref: '#/components/responses/TownDisticts'
-  /towns/{name}/neighborhoods:
+  /api/towns/{name}/neighborhoods:
     get:
       tags:
         - towns
@@ -80,7 +80,7 @@ paths:
       responses:
         "200":
           $ref: '#/components/responses/District'
-  /districts/{name}/neighborhoods:
+  /api/districts/{name}/neighborhoods:
     get:
       tags:
         - districts
@@ -91,7 +91,7 @@ paths:
           $ref: '#/components/responses/DistrictNeighborhoods'
 
 # Neighborhoods
-  /neighborhoods:
+  /api/neighborhoods:
     get:
       tags:
         - neighborhoods
