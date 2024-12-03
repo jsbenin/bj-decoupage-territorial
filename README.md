@@ -42,6 +42,25 @@ mkdir tmp && touch tmp/db.sqlite3
 pnpm run dev
 ```
 
+```bash
+# charger les données dans votre base de donnée sqlite
+sudo chmod +x seed.sh
+./seed.sh
+```
+
+```bash
+# start the project
+pnpm run dev
+```
+
+*Utiliser cette commande si vous êtes paresseux*
+```bash
+make setup
+```
+
+Vous pouvez accéder à la documentation en passant par ici: `http://localhost:3333`
+
+
 
 # Utilisé par :
 * [Portail National des services publics du Bénin](https://service-public.bj)
